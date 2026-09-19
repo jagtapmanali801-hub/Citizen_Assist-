@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Citizen Assist — independent guidance for Maharashtra government digital services." />
+  <title>Citizen Assist — Maharashtra Government Service Guidance</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="brand" data-nav="home" tabindex="0" role="button" aria-label="Go to home">
+      <img src="assets/logo.jpeg" alt="Citizen Assist logo" />
+      <div><strong>Citizen Assist</strong><span>Government service guidance</span></div>
+    </div>
+    <button id="menuBtn" class="icon-btn menu-btn" aria-label="Open menu">☰</button>
+    <nav id="mainNav" aria-label="Primary navigation">
+      <button data-nav="home" class="nav-link active">Home</button>
+      <button data-nav="services" class="nav-link">Services</button>
+      <button data-nav="faq" class="nav-link">FAQ</button>
+      <button data-nav="about" class="nav-link">About</button>
+      <button data-nav="contact" class="nav-link">Contact</button>
+    </nav>
+    <div class="header-actions">
+      <select id="languageSelect" aria-label="Language">
+        <option value="en">English</option><option value="hi">हिंदी</option><option value="mr">मराठी</option>
+      </select>
+      <button id="accessibilityBtn" class="icon-btn" aria-label="Accessibility settings">♿</button>
+
+    </div>
+  </header>
+
+  <div id="alertBar" class="alert-bar" role="status">Independent guidance platform — not a government website. We explain services and link to official portals; applications happen there.</div>
+
+  <main id="main" tabindex="-1">
+    <section id="page-home" class="page active-page">
+      <div class="hero hero-full">
+        <div class="hero-photo-bg" aria-hidden="true"></div>
+        <div class="hero-copy wrap">
+          <span class="hero-badge">🇮🇳 &nbsp; Government Services &nbsp; • &nbsp; Made Simple</span>
+          <h1>Your Guide to<br><span>Government Services<br>in Maharashtra</span></h1>
+          <p>Get simple, step-by-step guides, checklists and support to help you access government digital services with confidence.</p>
+          <div class="search-box big-search">
+            <input id="homeSearch" type="search" placeholder="Search for a service (e.g. Passport, Scholarship, Caste Certificate...)" aria-label="Search government services" />
+            <button id="homeSearchBtn" aria-label="Search">Search</button>
+          </div>
+          <div class="language-search"><span>◎ &nbsp; Search in:</span><button type="button">English</button><button type="button">हिंदी</button><button type="button">मराठी</button></div>
+          <div class="hero-trust-strip" aria-label="Citizen Assist trust information">
+            <span><b>✓</b> Official-source links</span>
+            <span><b>✓</b> No government login here</span>
+            <span><b>✓</b> English • हिंदी • मराठी</span>
+          </div>
+        </div>
+        <div class="hero-features wrap">
+          <div><span class="feature-icon">▤</span><strong>Step-by-Step Guides</strong><small>Understand the process<br>in simple language</small></div>
+          <div><span class="feature-icon">☑</span><strong>Checklists</strong><small>Never miss important<br>documents or steps</small></div>
+          <div><span class="feature-icon">🤖</span><strong>AI Chatbot</strong><small>Get instant answers<br>in your language</small></div>
+          <div><span class="feature-icon">♢</span><strong>Official Portals</strong><small>Verified government links<br>(no application on our platform)</small></div>
+        </div>
+      </div>
+
+      <section class="wrap section-block task-shortcuts" aria-labelledby="taskHeading">
+        <div class="section-heading"><div><span class="eyebrow">START WITH A TASK</span><h2 id="taskHeading">What do you need today?</h2><p>Go directly to common government-service tasks.</p></div><button class="text-btn" data-nav="services">Find any service →</button></div>
+        <div class="task-grid">
+          <button data-query="caste certificate"><span>📄</span><strong>Certificates</strong><small>Caste, income, domicile & more</small></button>
+          <button data-query="scholarship"><span>🎓</span><strong>Scholarships</strong><small>Student schemes & education</small></button>
+          <button data-query="pension"><span>🤝</span><strong>Pensions & welfare</strong><small>Social assistance services</small></button>
+          <button data-query="land"><span>🏠</span><strong>Land & property</strong><small>Revenue and property guidance</small></button>
+          <button data-query="driving licence"><span>🚗</span><strong>Driving & transport</strong><small>Licence and vehicle services</small></button>
+          <button data-query="birth certificate"><span>👶</span><strong>Birth & family</strong><small>Birth, death and family records</small></button>
+        </div>
+      </section>
+
+      <section class="wrap section-block">
+        <div class="section-heading"><div><span class="eyebrow">DISCOVER</span><h2>Popular Services</h2></div><button class="text-btn" data-nav="services">View all →</button></div>
+        <div id="popularGrid" class="cards-grid popular-grid"></div>
+      </section>
+
+      <section class="wrap section-block soft-panel">
+        <div class="section-heading"><div><span class="eyebrow">PERSONALISE</span><h2>I am a...</h2><p>Choose a profile to bring relevant services to the top.</p></div></div>
+        <div class="persona-row" id="personaRow">
+          <button data-persona="student"><span>🎓</span>Student</button>
+          <button data-persona="citizen"><span>👤</span>Citizen</button>
+          <button data-persona="worker"><span>🧰</span>Worker</button>
+          <button data-persona="others"><span>🧭</span>Others</button>
+        </div>
+      </section>
+
+      <section class="wrap section-block">
+        <div class="section-heading"><div><span class="eyebrow">START HERE</span><h2>Featured Guides</h2></div></div>
+        <div id="featuredGrid" class="cards-grid featured-grid"></div>
+      </section>
+
+      <section class="wrap visual-showcase section-block">
+        <div class="visual-copy">
+          <span class="eyebrow">DESIGNED FOR REAL PEOPLE</span>
+          <h2>From “I don’t know where to start” to “I’m ready.”</h2>
+          <p>Citizen Assist turns complicated government-service journeys into clear, friendly steps — discover the service, understand what you need, prepare your documents, and then continue to the verified official portal.</p>
+          <div class="feature-pills"><span>🔎 Smart Search</span><span>📋 Checklists</span><span>🌐 3 Languages</span><span>♿ Accessibility</span></div>
+        </div>
+        <div class="visual-collage">
+          <div class="mini-photo tall"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80" alt="People working together with digital information" loading="lazy" /></div>
+          <div class="mini-photo"><img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=700&q=80" alt="Documents and digital service preparation" loading="lazy" /></div>
+          <div class="mini-photo"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80" alt="Citizen using a laptop for online services" loading="lazy" /></div>
+        </div>
+      </section>
+
+      <section class="wrap section-block category-section">
+        <div class="section-heading"><div><span class="eyebrow">SERVICE CATEGORIES</span><h2>Browse by government-service area</h2><p>Choose a category when you know the area but not the exact service.</p></div></div>
+        <div id="homeCategoryGrid" class="category-grid"></div>
+      </section>
+      <section class="wrap stats">
+        <div><strong>16</strong><span>Citizen-friendly service areas</span></div>
+        <div><strong id="localServiceCount">0</strong><span>Detailed Citizen Assist guides</span></div>
+        <div><strong>1,212</strong><span>Official notified services*</span></div>
+        <div><strong>1,083</strong><span>Official portal-available services*</span></div>
+      </section>
+      <p class="wrap source-note">*Official Maharashtra Aaple Sarkar dashboard figures. The 1,083 figure is the official portal-available service count; the live government catalogue is the source of truth.</p>
+    </section>
+
+    <section id="page-services" class="page">
+      <div class="page-banner wrap"><span class="eyebrow">SERVICE DIRECTORY</span><h1>All Citizen Assist Services</h1><p>Search local guidance entries or open Maharashtra's full live official catalogue.</p></div>
+      <div class="wrap service-toolbar">
+        <div class="search-box search-with-suggestions"><input id="serviceSearch" type="search" placeholder="Search services in English / हिंदी / मराठी" autocomplete="off" /><button id="serviceSearchBtn">⌕</button><div id="searchSuggestions" class="search-suggestions" aria-live="polite"></div></div>
+        <select id="categoryFilter" aria-label="Category filter"><option value="all">All categories</option></select>
+        <select id="difficultyFilter" aria-label="Difficulty filter"><option value="all">All difficulty</option><option>Easy</option><option>Medium</option><option>Advanced</option></select>
+        <select id="personaFilter" aria-label="Persona filter"><option value="all">All users</option><option value="student">Student</option><option value="citizen">Citizen</option><option value="worker">Worker</option><option value="others">Others</option></select>
+      </div>
+      <div class="wrap coverage-note"><span class="coverage-dot" aria-hidden="true"></span><div><strong>Service coverage:</strong> <span>1,083 services are available on the official Maharashtra Aaple Sarkar portal. The downloadable Citizen Assist build contains detailed guides for the services currently covered locally, and links to the official live catalogue for the complete service set.</span></div></div>
+      <div class="wrap official-catalogue-card">
+        <div><span class="badge verified">Official source</span><h3>All 1,083 services available on the official portal</h3><p>Citizen Assist provides a simpler guidance layer, while the complete 1,083-service catalogue is maintained on the official Maharashtra Aaple Sarkar portal. Every service should be checked there for the latest requirements and availability.</p><div class="source-evidence"><span><strong>Official domain:</strong> aaplesarkar.mahaonline.gov.in</span><span><strong>Official count checked:</strong> 1,083 portal-available services</span><span><strong>Last checked:</strong> September 2026</span></div></div>
+        <a class="primary-btn" href="https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices" target="_blank" rel="noopener noreferrer">Open Official Full Catalogue ↗</a>
+      </div>
+      <div class="wrap results-meta"><span id="resultsCount"></span><button id="clearFilters" class="text-btn">Clear filters</button></div>
+      <div id="servicesGrid" class="wrap cards-grid services-grid"></div>
+      <div id="emptyState" class="wrap empty-state hidden"><div>🔎</div><h3>No matching local guide</h3><p>Try another keyword or use the complete official catalogue above.</p></div>
+    </section>
+
+    <section id="page-guide" class="page">
+      <div class="wrap breadcrumb"><button id="crumbHome" data-nav="home">Home</button><span>›</span><button id="crumbServices" data-nav="services">Services</button><span>›</span><span id="crumbService">Guide</span></div>
+      <div class="wrap guide-header">
+        <div><span id="guideCategory" class="eyebrow"></span><h1 id="guideTitle"></h1><p id="guideSubtitle"></p><div class="tag-row"><span id="guideDifficulty" class="badge"></span><span id="guideTime" class="badge neutral"></span><span class="badge verified">Source-linked</span></div></div>
+        <button id="openChatFromGuide" class="secondary-btn">💬 Ask Citizen Assist</button>
+      </div>
+      <div class="wrap guide-layout">
+        <aside class="guide-nav" aria-label="Guide sections">
+          <button data-scroll="overview" class="active">Overview</button><button data-scroll="eligibility">Eligibility</button><button data-scroll="documents">Documents</button><button data-scroll="steps">Steps</button><button data-scroll="checklist">Checklist</button><button data-scroll="faq-guide">FAQ</button>
+        </aside>
+        <div class="guide-main">
+          <section id="overview" class="guide-card"><h2>1. Service Information</h2><div id="overviewContent"></div></section>
+          <section id="eligibility" class="guide-card"><h2>2. Eligibility Criteria</h2><ul id="eligibilityList"></ul><h3>3. Prerequisites</h3><ul id="prereqList"></ul></section>
+          <section id="documents" class="guide-card"><h2>4. Required Documents</h2><div id="documentsList" class="document-list"></div></section>
+          <section id="steps" class="guide-card"><h2>5. Step-by-Step Instructions</h2><ol id="stepsList" class="steps-list"></ol></section>
+          <section id="checklist" class="guide-card"><div class="check-head"><div><h2>6–7. Interactive Checklist & Progress</h2><p>Tick preparation items. Progress is stored only in this browser session.</p></div><strong id="progressPct">0%</strong></div><div class="progress"><span id="progressBar"></span></div><div id="checklistItems" class="checklist"></div></section>
+          <section class="guide-card two-col"><div><h2>8. Common Mistakes</h2><ul id="mistakesList"></ul></div><div><h2>9. Troubleshooting</h2><ul id="troubleshootingList"></ul></div></section>
+          <section class="guide-card portal-card"><div><span class="badge verified">OFFICIAL DESTINATION</span><h2>10. Official Government Portal</h2><p>Citizen Assist does not submit your application. Continue only on the government destination shown for this guide.</p><div id="portalEvidence" class="source-evidence"><span><strong>Official domain:</strong> shown before opening</span><span><strong>Source:</strong> service guide record</span><span><strong>Last verified:</strong> September 2026</span></div></div><a id="portalBtn" class="primary-btn" target="_blank" rel="noopener noreferrer">Continue to Official Portal ↗</a></section>
+          <section id="faq-guide" class="guide-card"><h2>11. Related FAQs</h2><div id="guideFaqs" class="accordion"></div></section>
+          <section class="guide-card"><h2>12. Feedback</h2><p>Was this guide helpful?</p><div class="feedback-row"><button class="feedback-btn" data-helpful="yes">👍 Yes</button><button class="feedback-btn" data-helpful="no">👎 No</button></div><textarea id="guideFeedbackText" maxlength="400" placeholder="Optional feedback — do not enter Aadhaar, PAN, passwords or financial details."></textarea><button id="submitGuideFeedback" class="secondary-btn">Submit feedback</button><div id="guideFeedbackMsg" class="form-msg" aria-live="polite"></div></section>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-faq" class="page"><div class="wrap page-banner"><span class="eyebrow">FAQ</span><h1>Frequently Asked Questions</h1><p>Quick answers about Citizen Assist and using official digital services safely.</p><input id="faqSearch" class="full-input" type="search" placeholder="Search FAQs" /></div><div id="faqList" class="wrap accordion large-accordion"></div></section>
+
+    <section id="page-about" class="page">
+      <div class="about-hero wrap">
+        <div>
+          <span class="eyebrow">ABOUT CITIZEN ASSIST</span>
+          <h1>Making government digital services easier to understand.</h1>
+          <p>Citizen Assist is a college CEP project built as an independent educational and procedural guidance platform. It helps people discover the right government service, understand the preparation requirements, and reach the correct official portal with confidence.</p>
+          <div class="tag-row"><span class="badge verified">Independent platform</span><span class="badge neutral">English • हिंदी • मराठी</span><span class="badge neutral">Zero-PII</span></div>
+        </div>
+        <div class="about-photo"><img src="assets/hero-government-service-center.png" alt="Mantralaya, Mumbai" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('photo-fallback')" /><div><strong>Maharashtra Government Services</strong><span>Guidance before official portal handoff</span></div></div>
+      </div>
+
+      <div class="wrap about-grid about-rich-grid">
+        <div class="content-card featured-about"><span class="card-kicker">01 • THE IDEA</span><h2>Why we created Citizen Assist</h2><p>Government services are important, but the digital journey can feel confusing: users may not know which service to choose, what documents to prepare, where to find the official portal, or what to do when an OTP, upload, payment or session issue occurs.</p><p>Citizen Assist adds a simple preparation layer before the government transaction.</p></div>
+        <div class="content-card"><span class="card-kicker">02 • OUR MISSION</span><h2>Discover → Understand → Prepare → Verify → Redirect</h2><p>Every part of the website follows this journey. We explain the service in simple language, provide a checklist, highlight common mistakes, and then send the user to the verified official destination.</p></div>
+        <div class="content-card"><span class="card-kicker">03 • WHO IT HELPS</span><h2>Student • Citizen • Worker • Others</h2><ul><li><strong>Students:</strong> scholarships, education and document guidance.</li><li><strong>Citizens:</strong> certificates, identity, family and public services.</li><li><strong>Workers:</strong> labour, welfare and simplified multilingual guidance.</li><li><strong>Others:</strong> access the full service directory without a persona filter.</li></ul></div>
+        <div class="content-card"><span class="card-kicker">04 • WHAT YOU GET</span><h2>A complete preparation experience</h2><div class="about-feature-list"><span>🔎 Search & smart matching</span><span>🗂️ Category & persona filters</span><span>📄 Required-document guidance</span><span>🪜 Step-by-step instructions</span><span>☑️ Interactive checklist</span><span>📊 Live preparation progress</span><span>🤖 Citizen Assist chatbot</span><span>🌐 Official portal handoff</span></div></div>
+        <div class="content-card wide-card"><span class="card-kicker">05 • SAFETY & PRIVACY</span><h2>We guide — we don't collect sensitive government information.</h2><div class="safety-grid"><div><strong>Never enter here</strong><p>Aadhaar numbers, PAN numbers, passwords, OTPs, financial credentials or other sensitive government identifiers.</p></div><div><strong>Where applications happen</strong><p>Actual government applications and submissions happen on the verified official government portal, outside Citizen Assist.</p></div><div><strong>Why this matters</strong><p>The platform is designed as an informational layer, not as a government authority or transaction processor.</p></div></div></div>
+        <div class="content-card wide-card about-process"><span class="card-kicker">06 • HOW CITIZEN ASSIST WORKS</span><h2>Your journey in 7 simple steps</h2><div class="journey-grid"><div><b>1</b><span>Open Citizen Assist</span></div><div><b>2</b><span>Search a service</span></div><div><b>3</b><span>Select the right guide</span></div><div><b>4</b><span>Check eligibility & documents</span></div><div><b>5</b><span>Complete the checklist</span></div><div><b>6</b><span>Ask the chatbot if needed</span></div><div><b>7</b><span>Continue to the official portal</span></div></div></div>
+        <div class="content-card wide-card about-stats"><span class="card-kicker">07 • MAHARASHTRA SERVICE ECOSYSTEM</span><h2>Built to connect users with the wider official catalogue</h2><p>The official Maharashtra Aaple Sarkar dashboard currently displays <strong>1,212 notified services</strong>, <strong>1,083 services available on the portal</strong>, and <strong>38 departments</strong>. Citizen Assist provides a simpler discovery and preparation layer while the official catalogue remains the source of truth.</p><a class="primary-btn" href="https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices" target="_blank" rel="noopener noreferrer">Explore Official Maharashtra Catalogue ↗</a></div>
+        <div class="content-card"><span class="card-kicker">08 • ACCESSIBILITY</span><h2>Designed for more people</h2><p>English, Hindi and Marathi support, scalable text, high contrast, black-and-white mode, keyboard-friendly navigation and large touch targets help make the interface easier to use.</p></div>
+        <div class="content-card"><span class="card-kicker">09 • TRUST & TRANSPARENCY</span><h2>Know who provides the information</h2><p>Citizen Assist is an independent college CEP project, not a government website. Government facts and destinations are separated from our guidance, with the official domain and last-checked information shown where available.</p></div>
+        <div class="content-card wide-card"><span class="card-kicker">10 • DESIGN REVIEW ACTIONS</span><h2>Built around the citizen task</h2><div class="safety-grid"><div><strong>Find first</strong><p>Search and common tasks are placed before decorative statistics.</p></div><div><strong>Verify before leaving</strong><p>Official-domain evidence is shown before the user continues to a government portal.</p></div><div><strong>AI stays transparent</strong><p>The chatbot is an assistive guide, not an official government authority. Users are directed to source-linked guidance and official portals.</p></div></div></div>
+      </div>
+    </section>
+
+    <section id="page-contact" class="page"><div class="wrap page-banner"><span class="eyebrow">CONTACT & FEEDBACK</span><h1>Contact Citizen Assist</h1><p>Send project feedback or report an unclear guide.</p></div><form id="contactForm" class="wrap contact-form"><div class="privacy-warning"><strong>Zero-PII reminder:</strong> Do not submit Aadhaar, PAN, Voter ID, passwords, OTPs or financial credentials.</div><label>Name<input name="name" required maxlength="80" /></label><label>Email<input name="email" type="email" required maxlength="120" /></label><label>Message<textarea name="message" required maxlength="800"></textarea></label><button class="primary-btn" type="submit">Send Message</button><div id="contactMsg" class="form-msg" aria-live="polite"></div></form></section>
+
+    <section id="page-accessibility" class="page"><div class="wrap page-banner"><span class="eyebrow">ACCESSIBILITY</span><h1>Accessibility Settings</h1></div><div class="wrap settings-card"><div><h3>Text size</h3><div class="segmented"><button data-font="small">A−</button><button data-font="normal" class="active">A</button><button data-font="large">A+</button></div></div><div><h3>High contrast</h3><label class="switch"><input id="highContrastToggle" type="checkbox" /><span></span></label></div><div><h3>Black & white</h3><label class="switch"><input id="bwToggle" type="checkbox" /><span></span></label></div><div><h3>Reset</h3><button id="resetAccessibility" class="secondary-btn">Reset settings</button></div></div></section>
+
+    <section id="page-404" class="page"><div class="wrap not-found"><div>404</div><h1>Page Not Found</h1><p>The page you are looking for does not exist or has moved.</p><div><button class="primary-btn" data-nav="home">Back to Home</button><button class="secondary-btn" data-nav="services">Explore Services</button></div></div></section>
+  </main>
+
+  <footer><div class="wrap footer-grid"><div><div class="brand mini"><img src="assets/logo.jpeg" alt="" /><div><strong id="footerBrandName">Citizen Assist</strong><span id="footerBrandTag">Your digital guide for government services</span></div></div><p id="footerDisclaimer">Independent guidance platform — not a government website.</p></div><div><strong id="footerQuick">Quick links</strong><button data-nav="services" id="footerServices">Services</button><button data-nav="faq" id="footerFaq">FAQ</button><button data-nav="about" id="footerAbout">About</button></div><div><strong id="footerOfficial">Official source</strong><a href="https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices" target="_blank" rel="noopener noreferrer" id="footerSource">Maharashtra Aaple Sarkar ↗</a></div></div></footer>
+
+
+  <div id="welcomeModal" class="modal-backdrop" aria-hidden="true">
+    <div class="welcome-modal" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+      <button id="closeWelcome" class="modal-close" aria-label="Close welcome popup">×</button>
+      <div class="modal-image"><img src="assets/logo.jpeg" alt="Citizen Assist" /></div>
+      <span class="eyebrow">WELCOME TO CITIZEN ASSIST</span>
+      <h2 id="welcomeTitle">Government services, made easier to understand.</h2>
+      <p>Search a service, prepare your documents, use the checklist, ask Citizen Assist, and continue safely to the official portal. Citizen Assist is independent and does not process applications.</p>
+      <div class="modal-actions"><button id="welcomeExplore" class="primary-btn">Explore Services</button><button id="welcomeAbout" class="secondary-btn">Learn About Us</button></div>
+      <small>Independent informational platform — not a government website.</small>
+    </div>
+  </div>
+
+  <button id="chatFab" class="chat-fab" aria-label="Open Citizen Assist chatbot"><span class="chat-fab-icon">✦</span><span>Ask Citizen Assist</span></button>
+  <aside id="chatPanel" class="chat-panel" aria-label="Citizen Assist chatbot" aria-hidden="true">
+    <div class="chat-head"><div><strong>Citizen Assist</strong><span>AI-assisted guidance • not official government advice</span></div><button id="closeChat" aria-label="Close chatbot">×</button></div>
+    <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+    <div class="chat-suggestions"><button>Documents needed?</button><button>How do I apply?</button><button>Official portal?</button></div>
+    <form id="chatForm" class="chat-input"><input id="chatInput" maxlength="300" placeholder="Ask about a service..." autocomplete="off" /><button type="submit">➤</button></form>
+  </aside>
+
+  <script src="data/services.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
